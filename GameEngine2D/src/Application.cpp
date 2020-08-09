@@ -1,44 +1,31 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include "DisplayManager.h"
 
 
 int main(void)
 {
-    GLFWwindow* window;
-
     /* Initialize the library */
     if (!glfwInit())
         return -1;
 
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(1280, 720, "2D Game Engine", NULL, NULL);
-    if (!window)
-    {
-        std::cout << "Failed to create GLFW window" << std::endl;
-        glfwTerminate();
-        return -1;
-    }
-
-
-    /* Make the window's context current */
-    glfwMakeContextCurrent(window);
+    Display display;
 
     if (glewInit() != GLEW_OK)
     {
-        std::cout << "Glew failed on init!" << std::endl;
+        std::cout << "Glew failed on initialize!" << std::endl;
     }
 
     std::cout << glGetString(GL_VERSION) << std::endl; 
 
     /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
+    while (!glfwWindowShouldClose(display.window))
     {
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-        /* Swap front and back buffers */
-        glfwSwapBuffers(window);
+        display.UpdateDisplay();
 
         /* Poll for and process events */
         glfwPollEvents();
