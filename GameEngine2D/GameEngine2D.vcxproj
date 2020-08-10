@@ -147,9 +147,15 @@
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\DisplayManager.cpp" />
+    <ClCompile Include="src\Loader.cpp" />
+    <ClCompile Include="src\MasterRenderer.cpp" />
+    <ClCompile Include="src\RawModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DisplayManager.h" />
+    <ClInclude Include="src\Loader.h" />
+    <ClInclude Include="src\MasterRenderer.h" />
+    <ClInclude Include="src\RawModel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

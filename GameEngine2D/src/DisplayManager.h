@@ -20,7 +20,6 @@ public:
 	~Display();
 	void UpdateDisplay();
 	float getFrameTimeSeconds();
-	GLFWwindow *getDisplayWindow();
 };
 
 		 

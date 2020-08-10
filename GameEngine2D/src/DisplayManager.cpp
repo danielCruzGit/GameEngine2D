@@ -13,6 +13,7 @@ Display::Display() {
     glfwMakeContextCurrent(window);
 
     /* Get inicial frame time */
+    delta = 0;
     lastFrameTime = glfwGetTime();
 }
 
@@ -35,8 +36,3 @@ void Display::UpdateDisplay() {
 float Display::getFrameTimeSeconds() {
     return delta;
 }
-
-GLFWwindow * Display::getDisplayWindow() {
-    return window;
-}
-
