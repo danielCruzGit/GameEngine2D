@@ -12,9 +12,11 @@ private:
 	std::vector<GLuint> VBOs;
 
 	GLuint createVAO();
-	void storeDataInAttributeList(int AttributeNumber, int coordinateSize, float data[]);
+	void storeDataInAttributeList(int AttributeNumber, int coordinateSize, float data[], int indicesCount);
 	void unbindVAO();
+	void bindIndicesBuffer(unsigned int data[], int indicesCount);
+	
 public:
-	RawModel loadToVAO(float positions[], int size);
+	RawModel loadToVAO(float positions[], unsigned int indices[], int verticesCount, int indicesCount);
 	void cleanUp();
 };

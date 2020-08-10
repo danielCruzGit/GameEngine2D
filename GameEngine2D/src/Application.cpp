@@ -26,18 +26,19 @@ int main(void)
     MasterRenderer renderer;
 
     float vertices[] = {
-        -0.5f, 0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-
         0.5f, -0.5f, 0.0f,
         0.5f, 0.5f, 0.0f,
         -0.5f, 0.5f, 0.0f
     };
 
-    int size = sizeof(vertices) / sizeof(float) / 3;
-    RawModel model = loader.loadToVAO(vertices,size);
+    unsigned int indices[] = {
+        0, 1, 2,
+        2, 3, 0
+    };
 
+    RawModel model = loader.loadToVAO(vertices,indices,4,6);
+    std::cout << model.getVertexCount() << " " << model.getVaoID() << std::endl;
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(display.window))
     {
