@@ -5,6 +5,7 @@
 #include "DisplayManager.h"
 #include "Loader.h"
 #include "MasterRenderer.h"
+#include "StaticShader.h"
 
 
 int main(void)
@@ -24,6 +25,7 @@ int main(void)
 
     Loader loader;
     MasterRenderer renderer;
+    StaticShader shader = StaticShader("src/shaders/vertexShader.vert", "src/shaders/fragmentShader.frag");
 
     float vertices[] = {
         -0.5f, -0.5f, 0.0f,
@@ -44,7 +46,9 @@ int main(void)
     {
         /* Render here */
         renderer.prepare();
+        shader.start();
         renderer.render(model);
+        shader.stop();
         display.UpdateDisplay();
 
         /* Poll for and process events */

@@ -6,18 +6,22 @@ char* ShaderProgram::filetobuf(const char* file)
     FILE* fptr;
     long length;
     char* buf;
+    errno_t err;
 
-    if(fopen_s(&fptr,file, "rb")) /* Open file for reading */
-       return NULL;
-    fseek(fptr, 0, SEEK_END); /* Seek to the end of the file */
-    length = ftell(fptr); /* Find out how many bytes into the file we are */
-    buf = (char*)malloc(length + 1); /* Allocate a buffer for the entire length of the file and a null terminator */
-    fseek(fptr, 0, SEEK_SET); /* Go back to the beginning of the file */
-    fread(buf, length, 1, fptr); /* Read the contents of the file in to the buffer */
-    fclose(fptr); /* Close the file */
-    buf[length] = 0; /* Null terminator */
+    if ((err = fopen_s(&fptr, file, "rb")) != 0) { /* Open file for reading */
+        return NULL;
+    }
+    else {
+        fseek(fptr, 0, SEEK_END); /* Seek to the end of the file */
+        length = ftell(fptr); /* Find out how many bytes into the file we are */
+        buf = (char*)malloc(length + 1); /* Allocate a buffer for the entire length of the file and a null terminator */
+        fseek(fptr, 0, SEEK_SET); /* Go back to the beginning of the file */
+        fread(buf, length, 1, fptr); /* Read the contents of the file in to the buffer */
+        fclose(fptr); /* Close the file */
+        buf[length] = 0; /* Null terminator */
 
-    return buf; /* Return the buffer */
+        return buf; /* Return the buffer */
+    }
 }
 
 ShaderProgram::ShaderProgram() { 
@@ -30,6 +34,7 @@ ShaderProgram::ShaderProgram(const char* vertex_file_path, const char* fragment_
     getAllUniformLocations();
 }
 
+void ShaderProgram::getAllUniformLocations() {}
 
 GLuint ShaderProgram::loadShaders(const char* vertex_file_path, const char* fragment_file_path) {
     int IsCompiled_VS, IsCompiled_FS;
@@ -37,7 +42,7 @@ GLuint ShaderProgram::loadShaders(const char* vertex_file_path, const char* frag
     char* vertexInfoLog;
     char* fragmentInfoLog;
     /* These are handles used to reference the shaders */
-
+   
     /* Read our shaders into the appropriate buffers */
     vertexsource = filetobuf(vertex_file_path);
     fragmentsource = filetobuf(fragment_file_path);
@@ -159,8 +164,8 @@ void ShaderProgram::cleanup() {
     free(fragmentsource);
 }
 
-int ShaderProgram::getUniformLocation(const char* uniformName) {
-    glGetUniformLocation(shaderprogram, uniformName);
+GLuint ShaderProgram::getUniformLocation(const char* uniformName) {
+    return glGetUniformLocation(shaderprogram, uniformName);
 }
 
 void ShaderProgram::loadFloat(int location, float value) {

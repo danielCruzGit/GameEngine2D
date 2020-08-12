@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <iostream>
 
 
 class ShaderProgram { 
@@ -30,7 +31,7 @@ public:
     virtual void getAllUniformLocations() = 0;
 
 protected:
-    int getUniformLocation(const char* uniformName);
+    GLuint getUniformLocation(const char* uniformName);
 	
     void loadFloat(int location, float value);
 	void loadInt(int location, int value);
