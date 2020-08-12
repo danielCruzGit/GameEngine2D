@@ -1,0 +1,2 @@
+C:/Dev/OpenGLprojects/GameEngine2D/GameEngine2D/src/vendor/glm/out/build/x64-Debug (default)/CMakeFiles/edit_cache.dir
+C:/Dev/OpenGLprojects/GameEngine2D/GameEngine2D/src/vendor/glm/out/build/x64-Debug (default)/CMakeFiles/rebuild_cache.dir

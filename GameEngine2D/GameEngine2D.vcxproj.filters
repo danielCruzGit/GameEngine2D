@@ -13,36 +13,57 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\RenderEngine">
+      <UniqueIdentifier>{780ebb32-e71e-477b-95e3-237fe21eff69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Models">
+      <UniqueIdentifier>{c64c393f-8c51-4982-b858-c2d3a7e4d3d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{99a65414-eb05-4060-b238-6b06d4eb4e11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\DisplayManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RawModel.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RenderEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\Loader.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RenderEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\MasterRenderer.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RenderEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RawModel.cpp">
+      <Filter>Source Files\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShaderProgram.cpp">
+      <Filter>Source Files\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StaticShader.cpp">
+      <Filter>Source Files\Shaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DisplayManager.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RawModel.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RenderEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\Loader.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RenderEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\MasterRenderer.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RawModel.h">
+      <Filter>Source Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShaderProgram.h">
+      <Filter>Source Files\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StaticShader.h">
+      <Filter>Source Files\Shaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

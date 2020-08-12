@@ -38,7 +38,7 @@ int main(void)
     };
 
     RawModel model = loader.loadToVAO(vertices,indices,4,6);
-    std::cout << model.getVertexCount() << " " << model.getVaoID() << std::endl;
+
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(display.window))
     {
