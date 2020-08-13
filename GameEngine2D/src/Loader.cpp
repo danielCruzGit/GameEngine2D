@@ -9,6 +9,26 @@ RawModel Loader::loadToVAO(float positions[], unsigned int indices[], int vertic
 	return RawModel(vaoID, indicesCount);
 }
 
+Texture Loader::loadTexture(const char* textureFile)
+{
+	Texture texture = Texture(textureFile);
+
+	GLuint textureID;
+	glGenTextures(1, &textureID);
+	glBindTexture(GL_TEXTURE_2D, textureID);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, texture.width, texture.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, texture.data);
+	texture.setTextureID(textureID);
+	textures.push_back(textureID);
+	glBindTexture(GL_TEXTURE_2D, 0);
+
+	return texture;
+}
+
 GLuint Loader::createVAO() {
 	GLuint vao;
 	glGenVertexArrays(1, &vao);
@@ -45,6 +65,9 @@ void Loader::cleanUp() {
 	}
 	for (GLuint vbo : VBOs) {
 		glDeleteVertexArrays(1, &vbo);
+	}
+	for (GLuint texture : textures) {
+		glDeleteTextures(1, &texture);
 	}
 }
 

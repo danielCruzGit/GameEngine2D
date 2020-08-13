@@ -44,6 +44,7 @@ int main(void)
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(display.window))
     {
+
         /* Render here */
         renderer.prepare();
         shader.start();
