@@ -3,13 +3,20 @@
 #include <GLFW/glfw3.h>
 #include "RawModel.h"
 #include <iostream>
+#include <glm/glm.hpp>
+#include "StaticShader.h"
 
 
 class MasterRenderer {
 
-public:
-	void prepare();
+private:
+	glm::mat4 projectionMatrix;
+	StaticShader shader = StaticShader("src/shaders/vertexShader.vert", "src/shaders/fragmentShader.frag");
 
-	void render(RawModel model);
+public:
+	MasterRenderer();
+	void prepare();
+	void createProjectionMatrix();
+	void render();
 
 };

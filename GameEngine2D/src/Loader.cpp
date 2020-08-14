@@ -9,8 +9,23 @@ RawModel Loader::loadToVAO(float positions[], unsigned int indices[], int vertic
 	return RawModel(vaoID, indicesCount);
 }
 
-Texture Loader::loadTexture(const char* textureFile)
-{
+RawModel Loader::loadQuadVAO(float width, float height, float zValue) {
+	float vertices[] = {
+		0.0f, 0.0f, zValue,
+		width, 0.0f, zValue,
+		width, height, zValue,
+		0.0f, height, zValue
+	};
+
+	unsigned int indices[] = {
+		0, 1, 2,
+		2, 3, 0
+	};
+
+	return loadToVAO(vertices, indices, 4, 6);
+}
+
+Texture Loader::loadTexture(const char* textureFile) {
 	Texture texture = Texture(textureFile);
 
 	GLuint textureID;

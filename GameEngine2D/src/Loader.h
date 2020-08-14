@@ -20,6 +20,7 @@ private:
 	
 public:
 	RawModel loadToVAO(float positions[], unsigned int indices[], int verticesCount, int indicesCount);
+	RawModel loadQuadVAO(float width, float height, float zValue);
 	Texture loadTexture(const char* textureFile);
 	void cleanUp();
 };

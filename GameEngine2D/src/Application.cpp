@@ -25,9 +25,8 @@ int main(void)
 
     Loader loader;
     MasterRenderer renderer;
-    StaticShader shader = StaticShader("src/shaders/vertexShader.vert", "src/shaders/fragmentShader.frag");
 
-    float vertices[] = {
+    /*float vertices[] = {
         -0.5f, -0.5f, 0.0f,
         0.5f, -0.5f, 0.0f,
         0.5f, 0.5f, 0.0f,
@@ -39,7 +38,7 @@ int main(void)
         2, 3, 0
     };
 
-    RawModel model = loader.loadToVAO(vertices,indices,4,6);
+    RawModel model = loader.loadToVAO(vertices,indices,4,6);*/
 
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(display.window))

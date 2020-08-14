@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Textures">
       <UniqueIdentifier>{c700bbe5-f85c-4247-9fb5-cc69aa799012}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Background">
+      <UniqueIdentifier>{5a82dd11-0b4a-45f3-8d3f-be37498b2bba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -63,6 +66,9 @@
     <ClCompile Include="src\TexturedModel.cpp">
       <Filter>Source Files\Models</Filter>
     </ClCompile>
+    <ClCompile Include="src\Background.cpp">
+      <Filter>Source Files\Background</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DisplayManager.h">
@@ -91,6 +97,9 @@
     </ClInclude>
     <ClInclude Include="src\TexturedModel.h">
       <Filter>Source Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Background.h">
+      <Filter>Source Files\Background</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
