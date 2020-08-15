@@ -34,6 +34,9 @@
     <Filter Include="Source Files\Background">
       <UniqueIdentifier>{5a82dd11-0b4a-45f3-8d3f-be37498b2bba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{2481a4e2-21a6-4993-bba3-e93492673007}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp">
@@ -69,6 +72,9 @@
     <ClCompile Include="src\Background.cpp">
       <Filter>Source Files\Background</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entity.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DisplayManager.h">
@@ -100,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="src\Background.h">
       <Filter>Source Files\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
+      <Filter>Source Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

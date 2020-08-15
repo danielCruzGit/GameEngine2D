@@ -18,6 +18,4 @@ public:
 	Background(Loader loader, int screenHeight);
 	void UpdateBackground();
 
-
-
 };

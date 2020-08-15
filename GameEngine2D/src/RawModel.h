@@ -8,6 +8,7 @@ private:
 	int vertexCount;
 
 public:
+	RawModel();
 	RawModel(GLuint vertexArrayObject, int vertexCount);
 	~RawModel();
 	int getVertexCount();

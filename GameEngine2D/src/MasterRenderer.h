@@ -5,6 +5,10 @@
 #include <iostream>
 #include <glm/glm.hpp>
 #include "StaticShader.h"
+#include "TexturedModel.h"
+#include "Entity.h"
+#include <vector>
+#include <map>
 
 
 class MasterRenderer {
@@ -12,11 +16,13 @@ class MasterRenderer {
 private:
 	glm::mat4 projectionMatrix;
 	StaticShader shader = StaticShader("src/shaders/vertexShader.vert", "src/shaders/fragmentShader.frag");
+	std::map<TexturedModel,std::vector<Entity>> HashMap;
 
 public:
 	MasterRenderer();
 	void prepare();
 	void createProjectionMatrix();
 	void render();
+	void processEntity();
 
 };

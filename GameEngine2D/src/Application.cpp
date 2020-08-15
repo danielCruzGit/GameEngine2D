@@ -45,10 +45,9 @@ int main(void)
     {
 
         /* Render here */
-        renderer.prepare();
-        shader.start();
-        renderer.render(model);
-        shader.stop();
+
+        renderer.render();
+
         display.UpdateDisplay();
 
         /* Poll for and process events */

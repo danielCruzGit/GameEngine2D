@@ -23,3 +23,7 @@ void MasterRenderer::render() {
 	glDisableVertexAttribArray(0);
 	glBindVertexArray(0);
 }
+
+void processEntity{
+
+}
